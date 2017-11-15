@@ -1,0 +1,18 @@
+<h1>{{cameraName}}</h1>
+
+<div *ngIf="isStreaming">
+<!--<div>-->
+  <iframe type="text/html" frameborder="0" width="890" height="500" src="//video.nest.com/embedded/live/rrwzgV?autoplay=1"
+    allowfullscreen></iframe>
+
+</div>
+
+<p-dataTable #dt  class="ui-g-12" sortField="eventDate" sortOrder="-1" emptyMessage="No event entries found"
+[reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true" [globalFilter]="tableSearch" exportFilename="events"
+[editable]="true"  [(selection)]="selectedRows">
+<p-column field="cameraId" header="CameraID" [editable]="false"></p-column>
+<p-column field="cameraName" header="Camera Name" [editable]="false"></p-column>
+<p-column field="eventDate" header="Event Date" [sortable]="true">
+</p-column>
+</p-dataTable>
+
